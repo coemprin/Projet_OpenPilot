@@ -4,7 +4,7 @@ from joystick import *
 
 joystick = init_joystick()
 
-COMMA_IP = "192.168.176.132" 
+COMMA_IP = "172.20.10.6" 
 USERNAME = "comma"
 PASSWORD = ""  
 
@@ -21,8 +21,8 @@ if joystick != None :
     try:
         while True:
 
-            left_x, left_y, right_x, right_y, lt, rt = read_joystick(joystick)
-            command = f"{left_x:.2f} {left_y:.2f} {right_x:.2f} {right_y:.2f} {lt:.2f} {rt:.2f}"
+            left_x, left_y, right_x, right_y, lt, rt, A, B, X, Y = read_joystick(joystick)
+            command = f"{left_x:.2f} {left_y:.2f} {right_x:.2f} {right_y:.2f} {lt:.2f} {rt:.2f} {A} {B} {X} {Y}"
             channel.send(command + "\n")
             
             time.sleep(0.01)

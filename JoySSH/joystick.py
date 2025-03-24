@@ -1,5 +1,4 @@
 import pygame
-import time
 
 def init_joystick():
     pygame.init()
